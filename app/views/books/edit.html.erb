@@ -1,0 +1,26 @@
+<body>
+<div class="body" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+<h1>Editing Book</h1>
+<%= form_for(@book) do |f| %>
+
+  <strong>Title</strong><br>
+  <%= f.text_field :title , class:"book-title"%><br>
+
+  <strong>Opinion</strong><br>
+  <%= f.text_area :opinion, class:"book-body"%>
+  <br>
+  <%= f.submit 'Update Book', class: "btn btn-primary" %>
+
+<% end %><br>
+
+<p>
+  <%= link_to "Show", book_path , class:"book_#{@book.id}"%>
+  |
+  <%= link_to "Back", books_path , class:"back"%>
+</p>
+</div>
+</div>
+</body>

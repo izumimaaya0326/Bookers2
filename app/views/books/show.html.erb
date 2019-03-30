@@ -1,0 +1,33 @@
+<div class="container">
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+	<%= render 'books/list',book: @new_book, user: @book.user %>
+
+<div class="col-xs-9">
+	<h1>Book detail</h1>
+	<table class="table">
+		<tbody>
+			<tr class="new-table">
+
+                        <td><%= link_to user_path(@book.user), class:"user_#{@user.id}"  do %>
+	                        	<span><%= attachment_image_tag @book.user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg", size: '50×50' %><br>
+	                        		<%=  @book.user.username %>
+	                        	</span>
+                        	<% end %>
+                        </td>
+						<td><span><%= @book.title %></span></td>
+						<td><span><%= @book.opinion %></span></td>
+
+						<% if current_user.id == @book.user.id %>
+						<td><span class = "btn-sm btn-success" ><%= link_to "Edit", edit_book_path(@book) ,class:"edit_book_#{@book.id}"%></span></td>
+						<td><span class ="btn-sm btn-danger"><%= link_to "Destroy", book_path(@book), method: :delete, "data-confirm" =>"Are you sure？" ,class:"destroy_book_#{@book.id}"%></span></td>
+						<% else %>
+						<td></td>
+				        <td></td>
+
+			 			<% end %>
+					</tr>
+		</tbody>
+	</table>
+</div>
