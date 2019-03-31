@@ -21,13 +21,13 @@
 
 				<tr class="new-table">
 					<td><span>
-						<%= link_to user_path(book.user) ,class:"user_#{@user.id}" do %>
+						<%= link_to user_path(book.user) ,class:"user_#{book.user.id}" do %>
 							 <%= attachment_image_tag book.user, :profile_image, :fill, 50, 50, format: 'jpeg',fallback: "no_image.jpg",size: '50x50' %>
 					 	<% end %>
 					 </span>
 					</td>
 					<a>
-					<td><span><%= link_to book.title, "/books/#{book.id}",class:"book_#{@book.id}"%></span></td>
+					<td><span><%= link_to book.title, "/books/#{book.id}",class:"book_#{book.id}"%></span></td>
 					<td><span><%= book.opinion %></span></td>
 				</tr>
 			<% end %>

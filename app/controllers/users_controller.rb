@@ -16,10 +16,10 @@ before_action :authenticate_user!, only: [:new, :index, :show]
 
   def edit
         @user = User.find(params[:id])
-     if @user != current_user.id
+     if @user.id != current_user.id
         redirect_to users_path
-      end
   end
+end
 
   def update
         @user = User.find(params[:id])

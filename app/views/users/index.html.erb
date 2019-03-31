@@ -16,7 +16,7 @@
 			<% @users.each do |user| %>
 
 			<tr class="new-table">
-				<td><span><%= attachment_image_tag user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg", size: '50×50' %></span></td>
+				<td><span><%= attachment_image_tag user, :profile_image, :fill, 50, 50, format: 'jpeg',fallback: "no_image.jpg",size: '50x50' %></span></td>
 				<td><span><%= user.username %></span></td>
 				<td><span><%= link_to "show",user_path(user) ,class:"user_#{@user.id}" %></span></td>
 			</tr>
