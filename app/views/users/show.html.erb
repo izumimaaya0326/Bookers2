@@ -1,5 +1,7 @@
 <div class="container">
-
+ <div class="flash" style="color:green">
+        <%= flash[:notice] %>
+      </div>
 
 	<div class="row">
 			<%= render 'books/list',book: @book, user: @user %>
