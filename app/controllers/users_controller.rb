@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-before_action :authenticate_user!, only: [:new,:index,:show]
+before_action :authenticate_user!, only: [:index,:show,:create,:edit,:update]
 
 
 
@@ -8,7 +8,9 @@ before_action :authenticate_user!, only: [:new,:index,:show]
   	   @user = User.find(params[:id])
   end
 
-  def
+  def create
+      @user = User.find(params[:id])
+  end
 
   def edit
         @user = User.find(params[:id])
